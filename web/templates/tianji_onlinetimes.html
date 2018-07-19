@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天玑在线时长查询</title>
+</head>
+<body>
+<h1>内网查询天玑在线时长</h1>
+<h1>未部署服务器，需链接开发人员本机192.168.1.31:9001/onlinetimes</h1>
+<h4>请按照提示输入查询参数，参数不需加""</h4>
+<form method="post" action="/tianjireqresult">
+    <input style="width:350px;height:15px" type="text" name="userType" placeholder="用户来源：3=长青，4=i生活">
+    <br><br>
+    <input style="width:350px;height:15px" type="text" name="budate" placeholder='查询日期，如：2018-06-29'>
+    <br><br>
+    <input style="width:350px;height:15px" type="text" name="userid" placeholder="金窝窝用户ID,如：1d84f462-557c-11e7-8393-6c92bf3160a3">
+    <br><br>
+    <!--<input type="password" name="pass" placeholder="Password">-->
+    <input type="submit" value="Submit" name="ok">
+</form>
+</body>
+</html>

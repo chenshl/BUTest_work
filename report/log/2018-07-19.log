@@ -1,0 +1,3 @@
+2018-07-19 13:52:40 INFO 请求地址--https://tongji.jwwblockchain.com/openreport/api/visit_length/20170929001000334474?date=2018-07-18&open_user=jvvtjdev&site_id=3&sign=A3D2AA212EA8F757F810D60DFAC1A7E9  返回数据--{"value":2247}
+2018-07-19 13:52:57 INFO 请求地址--https://tongji.jwwblockchain.com/openreport/api/visit_length/20170928001000330456?date=2018-07-18&open_user=jvvtjdev&site_id=3&sign=A3D2AA212EA8F757F810D60DFAC1A7E9  返回数据--{"value":2841}
+2018-07-19 13:53:07 INFO 请求地址--https://tongji.jwwblockchain.com/openreport/api/visit_length/20171018001000496719?date=2018-07-18&open_user=jvvtjdev&site_id=3&sign=A3D2AA212EA8F757F810D60DFAC1A7E9  返回数据--{"value":2103}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>测试环境BU接口访问</h1>
+<h1>Welcome to the BU TASK system</h1>
+<h4>请输入要访问的接口名称</h4>
+<form method="post" action="/FlaskTutorial">
+    <input style="width:250px;height:15px" type="text" name="requestserver" placeholder="接口路径，如：/wallet/v1/myAssert">
+    <br><br>
+    <input style="width:300px;height:15px" type="text" name="requestdata" placeholder='接口参数，如：{"aaa":"111","bbb":"222"}'>
+    <br><br>
+    <!--<input type="password" name="pass" placeholder="Password">-->
+    <input type="submit" value="Submit" name="ok">
+</form>
+</body>
+</html>
