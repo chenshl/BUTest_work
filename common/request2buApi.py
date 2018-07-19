@@ -24,12 +24,12 @@ class request2buApi(object):
 
         # 公共参数
         self.pubdata = {
-                        # "terraceId":"caeb2f137dd581bf8f11a3a2bc190b58",  # i生活
-                        # "terraceId":"5db0ca63904b8800c274a996bc8545ad",  # 币航
-                        "terraceId": "6c7dbaa891b3f476b90be2b16c5cfdac",  # 长青
-                        # "secret":"7413818815075981a28bb7733fa1387d",  # i生活
-                        # "secret":"6b720eacdc49b2273a991ad1bf880e3a",  # 币航
-                        "secret": "5106fca2bb5966141d93bb7b096d1418",  # 长青
+                        # "terraceId":"*******************************",  # i生活
+                        # "terraceId":"*******************************",  # 币航
+                        "terraceId": "*******************************",  # 长青
+                        # "secret":"*******************************",  # i生活
+                        # "secret":"*******************************",  # 币航
+                        "secret": "*******************************",  # 长青
                         "signType":"MD5",
                         "version":"v1.0",
                         "device":"ANDROID"
