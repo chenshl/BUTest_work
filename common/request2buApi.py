@@ -15,8 +15,6 @@ class request2buApi(object):
 
         self.service = service
         # self.url = "http://192.168.8.21:6880/tasker"  # 内网开发环境
-        # self.url = "https://ubc.jinvovo.com"   # 正式环境
-        # self.url = "http://47.99.3.32"  # 新正式环境
         self.url = "http://192.168.8.18:6880"  # 新自测环境
         # self.url = "http://192.168.8.35:6880"  # 新集成环境
         # self.url = "http://tubc.jinvovo.com"  # 新集成环境
