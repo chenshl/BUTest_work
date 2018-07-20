@@ -31,10 +31,13 @@ class kafka_consumer(object):
         partitions = topic.partitions
         last_offset = topic.latest_available_offsets()
         print("最近可用offset{}".format(last_offset))  # 查看所有分区
-        consumer = topic.get_simple_consumer(b"simple_consumer_group", partitions=[partitions[0]],
+        consumer = topic.get_simple_consumer(b"simple_consumer_group",   # 指定分区进行消费
+                                             partitions=[partitions[0]],
                                              auto_commit_enable=True,
                                              auto_commit_interval_ms=1,
-                                             reset_offset_on_start=False)  # 指定分区进行消费
+                                             # zookeeper_connect='192.168.1.140:2181,192.168.1.141:2181,192.168.1.142:2181',  # 从zookeeper消费,zookeeper的默认端口为2181,这里就是连接多个zk
+                                             reset_offset_on_start=False
+                                             )
         offset_list = consumer.held_offsets
         print("当前消费者分区offset情况{}".format(offset_list))  # 消费者拥有的分区offset的情况
         consumer.reset_offsets([(partitions[0], offset)])  # 设置offset
