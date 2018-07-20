@@ -29,8 +29,8 @@ class kafka_producerTest(object):
         print(u"最近可用的offset{}".format(last_offset))
 
         # 同步生成消息
-        producer = topic.get_producer(async=True)
-        producer.produce(message.encode())
+        producer = topic.get_producer(sync=True)
+        producer.produce(bytes(message, encoding="utf-8"))  # 转换成bytes格式
 
         # 查看offset变化
         last_offset = topic.latest_available_offsets()
@@ -54,8 +54,8 @@ class kafka_producerTest(object):
             print("为消息分配partition {} {}".format(pid, key))
             return pid[0]
         topic = self.client.topics["test".encode()]
-        producer = topic.get_producer(async = True, partitioner=assign_patition)
-        producer.produce(str(time.time()).encode(), partition_key=b"partition_key_0")
+        producer = topic.get_producer(sync = True, partitioner=assign_patition)
+        producer.produce(bytes(str(time.time()), encoding="utf-8"), partition_key=b"partition_key_0")
 
 
     def async_produce_message(self):
@@ -71,8 +71,8 @@ class kafka_producerTest(object):
 
         # 记录最初的偏移量
         old_offset = last_offset[0].offset[0]
-        producer = topic.get_producer(async = False, partitioner=lambda pid, key: pid[0])
-        producer.produce(str(time.time()).encode())
+        producer = topic.get_producer(sync = False, partitioner=lambda pid, key: pid[0])
+        producer.produce(bytes(str(time.time()), encoding="utf-8"))
         s_time = time.time()
         while True:
             last_offset = topic.latest_available_offsets()
@@ -91,8 +91,8 @@ class kafka_producerTest(object):
         topic = self.client.topics["test".encode()]
         last_offset = topic.latest_available_offsets()
         print("最近的偏移量{}".format(last_offset))
-        producer = topic.get_producer(async = False, delivery_reports=True , partitioner=lambda pid, key: pid[0])
-        producer.produce(str(time.time()).encode())
+        producer = topic.get_producer(sync = False, delivery_reports=True , partitioner=lambda pid, key: pid[0])
+        producer.produce(bytes(str(time.time()), encoding="utf-8"))
         s_time = time.time()
         delivery_report = producer.get_delivery_report()
         e_time = time.time()
@@ -120,4 +120,8 @@ if __name__ == "__main__":
     #     kafka_producer(sendmessage).producersend2kafka()
 
     kafka_ins = kafka_producerTest()
-    kafka_ins.product_partition(b"hello world")
+    # kafka_ins.producer_partition()
+    # kafka_ins.producer_designated_partition()
+    # kafka_ins.async_produce_message()
+    for x in range(1, 11):
+        kafka_ins.product_partition("hello world -" + str(x))
